@@ -12,7 +12,4 @@ import springsaga.domain.*;
 public interface FactoryService {
     @RequestMapping(method = RequestMethod.POST, path = "/factories")
     public void makeProduct(@RequestBody Factory factory);
-
-    @RequestMapping(method = RequestMethod.POST, path = "/factories")
-    public void makeProduct(@RequestBody Factory factory);
 }

@@ -21,6 +21,8 @@ public class Factory {
     private Integer qty;
 
     private Integer name;
+    
+    private Long orderId;
 
     @PostPersist
     public void onPostPersist() {

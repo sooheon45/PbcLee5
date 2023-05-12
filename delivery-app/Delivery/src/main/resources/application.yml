@@ -60,10 +60,7 @@ logging:
   level:
     org.hibernate.type: trace
     org.springframework.cloud: debug
-
-api:
-  url:
-
+    
 server:
   port: 8083
 

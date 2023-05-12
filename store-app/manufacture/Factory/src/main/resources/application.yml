@@ -28,10 +28,10 @@ spring:
       bindings:
         event-in:
           group: Factory
-          destination: manufacture
+          destination: springsaga
           contentType: application/json
         event-out:
-          destination: manufacture
+          destination: springsaga
           contentType: application/json
 
 logging:
@@ -41,7 +41,7 @@ logging:
 
 
 server:
-  port: 8087
+  port: 8086
 
 ---
 

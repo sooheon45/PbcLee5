@@ -117,7 +117,7 @@ public class OrderSagaSaga {
         /* Logic */
         updateStatusCommand.setId(event.getOrderId());
 
-        orderService.updateStatus(event.get(), updateStatusCommand);
+        orderService.updateStatus(event.getOrderId(), updateStatusCommand);
 
         // Manual Offset Commit //
         acknowledgment.acknowledge();
@@ -136,6 +136,9 @@ public class OrderSagaSaga {
         System.out.println(
             "\n\n##### listener OrderSaga : " + orderCompleted + "\n\n"
         );
+        Factory factory = new Factory();
+        factory.setOrderId(event.getId());
+        factoryService.makeProduct(factory);
 
         // Manual Offset Commit //
         acknowledgment.acknowledge();
@@ -154,6 +157,11 @@ public class OrderSagaSaga {
         System.out.println(
             "\n\n##### listener OrderSaga : " + productManufactured + "\n\n"
         );
+
+        OverseasDelivery overseasDelivery = new OverseasDelivery();
+        /* Logic ****/
+        overseasDelivery.setOrderId(event.getOrderId());
+        overseasDeliveryService.startOverseasDelivery(overseasDelivery);
 
         // Manual Offset Commit //
         acknowledgment.acknowledge();

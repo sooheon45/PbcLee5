@@ -19,7 +19,7 @@ public class Order {
 
     private String productName;
 
-    private String productId;
+    private Long productId;
 
     private String status;
 

@@ -9,7 +9,7 @@ spring:
     gateway:
       routes:
         - id: Factory
-          uri: http://localhost:8087
+          uri: http://localhost:8086
           predicates:
             - Path=/factories/**, 
         - id: frontend
