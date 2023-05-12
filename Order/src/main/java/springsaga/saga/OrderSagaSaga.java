@@ -83,6 +83,7 @@ public class OrderSagaSaga {
             storageService.decreaseStock(
                 event.getOrderId(),
                 decreaseStockCommand
+    
             );
         } catch (Exception e) {
             CancelDeliveryCommand cancelDeliveryCommand = new CancelDeliveryCommand();
